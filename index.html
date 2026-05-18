@@ -40,16 +40,14 @@ body{
   min-height:100vh;
 }
 
-/* TOPBAR */
-
 .topbar{
   background:var(--red);
   padding:14px 18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:12px;
   flex-wrap:wrap;
+  gap:14px;
 }
 
 .top-left{
@@ -59,7 +57,7 @@ body{
 }
 
 .logo{
-  font-size:30px;
+  font-size:32px;
 }
 
 .site-title{
@@ -70,8 +68,9 @@ body{
 
 .site-sub{
   font-size:12px;
-  opacity:.8;
   text-transform:uppercase;
+  opacity:.8;
+  letter-spacing:1px;
 }
 
 .nav{
@@ -87,15 +86,13 @@ body{
   padding:10px 16px;
   border-radius:10px;
   cursor:pointer;
-  font-weight:600;
+  font-weight:700;
 }
 
 .nav button.active{
   background:white;
   color:var(--red);
 }
-
-/* MAIN */
 
 .main{
   max-width:1400px;
@@ -122,8 +119,6 @@ body{
   margin-bottom:18px;
 }
 
-/* FORM */
-
 label{
   display:block;
   margin-top:14px;
@@ -131,6 +126,7 @@ label{
   font-size:12px;
   color:var(--muted);
   text-transform:uppercase;
+  letter-spacing:.8px;
   font-weight:700;
 }
 
@@ -149,12 +145,6 @@ select{
   border-radius:10px;
   padding:10px 12px;
   color:var(--text);
-  outline:none;
-}
-
-input:focus,
-select:focus{
-  border-color:var(--red);
 }
 
 .row{
@@ -162,11 +152,9 @@ select:focus{
   gap:12px;
 }
 
-.row > *{
+.row>*{
   flex:1;
 }
-
-/* VEHICLES */
 
 .vehicle-grid{
   display:grid;
@@ -181,7 +169,6 @@ select:focus{
   border-radius:12px;
   padding:14px;
   cursor:pointer;
-  transition:.2s;
   text-align:left;
   color:var(--text);
 }
@@ -203,8 +190,6 @@ select:focus{
   margin-top:4px;
 }
 
-/* BUTTONS */
-
 .btn-primary{
   width:100%;
   border:none;
@@ -216,40 +201,6 @@ select:focus{
   margin-top:20px;
   font-size:16px;
 }
-
-.btn-primary:hover{
-  background:var(--red2);
-}
-
-.btn-small{
-  border:none;
-  border-radius:10px;
-  padding:10px 14px;
-  cursor:pointer;
-  font-weight:700;
-}
-
-.btn-edit{
-  background:rgba(59,130,246,.15);
-  color:#93c5fd;
-}
-
-.btn-delete{
-  background:rgba(239,68,68,.15);
-  color:#fca5a5;
-}
-
-.btn-ok{
-  background:rgba(34,197,94,.15);
-  color:var(--green);
-}
-
-.btn-no{
-  background:rgba(239,68,68,.15);
-  color:#ef4444;
-}
-
-/* STATUS */
 
 .status{
   padding:4px 10px;
@@ -273,9 +224,8 @@ select:focus{
   color:#ef4444;
 }
 
-/* REQUESTS */
-
-.req-card{
+.req-card,
+.event{
   background:#14181d;
   border-radius:12px;
   padding:16px;
@@ -295,21 +245,25 @@ select:focus{
   border-left-color:#ef4444;
 }
 
-.req-top{
+.req-top,
+.event-top{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   gap:10px;
+  margin-bottom:12px;
   flex-wrap:wrap;
-  margin-bottom:10px;
 }
 
-.req-name{
+.req-name,
+.event-title{
   font-family:'Barlow Condensed',sans-serif;
   font-size:22px;
   font-weight:700;
 }
 
-.req-meta{
+.req-meta,
+.event-meta{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:8px 16px;
@@ -320,12 +274,31 @@ select:focus{
 .req-actions{
   display:flex;
   gap:10px;
-  flex-wrap:wrap;
   margin-top:16px;
+  flex-wrap:wrap;
+}
+
+.btn-ok,
+.btn-no{
+  flex:1;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.btn-ok{
+  background:rgba(34,197,94,.15);
+  color:var(--green);
+}
+
+.btn-no{
+  background:rgba(239,68,68,.15);
+  color:#ef4444;
 }
 
 .free-spots{
-  margin-top:10px;
+  margin-top:12px;
   background:rgba(59,130,246,.12);
   color:#93c5fd;
   border-radius:10px;
@@ -333,8 +306,6 @@ select:focus{
   font-size:14px;
   font-weight:600;
 }
-
-/* TABS */
 
 .tabs{
   display:flex;
@@ -358,71 +329,6 @@ select:focus{
   color:white;
 }
 
-/* TABLE */
-
-table{
-  width:100%;
-  border-collapse:collapse;
-}
-
-th,td{
-  padding:12px;
-  border-bottom:1px solid var(--border);
-  text-align:left;
-}
-
-th{
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* POPUP */
-
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  padding:20px;
-}
-
-.modal-content{
-  width:100%;
-  max-width:420px;
-  background:linear-gradient(180deg,#252d36,#1d2329);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:28px;
-  box-shadow:0 20px 50px rgba(0,0,0,.4);
-}
-
-.modal-title{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:32px;
-  margin-bottom:10px;
-}
-
-.modal-sub{
-  color:var(--muted);
-  margin-bottom:20px;
-  line-height:1.5;
-}
-
-.modal-buttons{
-  display:flex;
-  gap:10px;
-  margin-top:18px;
-}
-
-.modal-buttons button{
-  flex:1;
-}
-
-/* NOTIFICATION */
-
 .notif{
   position:fixed;
   top:14px;
@@ -443,8 +349,6 @@ th{
   color:#fecaca;
 }
 
-/* RESPONSIVE */
-
 @media(max-width:1000px){
 
   .grid{
@@ -463,13 +367,9 @@ th{
     grid-template-columns:1fr;
   }
 
-  .req-meta{
+  .req-meta,
+  .event-meta{
     grid-template-columns:1fr;
-  }
-
-  .topbar{
-    flex-direction:column;
-    align-items:flex-start;
   }
 
 }
@@ -498,12 +398,8 @@ th{
       👤 Reservatie
     </button>
 
-    <button id="btnAdmin" onclick="openAdminModal()">
+    <button id="btnAdmin" onclick="showView('admin')">
       🔐 Beheer
-    </button>
-
-    <button id="btnLogout" onclick="logoutAdmin()" style="display:none">
-      🚪 Uitloggen
     </button>
 
   </div>
@@ -511,38 +407,6 @@ th{
 </header>
 
 <div id="notification" style="display:none"></div>
-
-<!-- ADMIN MODAL -->
-
-<div class="modal" id="adminModal">
-
-  <div class="modal-content">
-
-    <div class="modal-title">
-      🔐 Admin toegang
-    </div>
-
-    <div class="modal-sub">
-      Geef de beheerderscode in om reservaties en voertuigen te beheren.
-    </div>
-
-    <input id="adminCodeInput" type="password" placeholder="Admin code">
-
-    <div class="modal-buttons">
-
-      <button class="btn-primary" onclick="checkAdminCode()">
-        Inloggen
-      </button>
-
-      <button class="btn-small btn-delete" onclick="closeAdminModal()">
-        Annuleren
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
 
 <div class="main">
 
@@ -588,11 +452,11 @@ th{
 
           <div>
             <label>Aantal personen</label>
-            <input id="fPersons" type="number" value="1">
+            <input id="fPersons" type="number" min="1" value="1">
           </div>
 
           <div style="flex:2">
-            <label>Bestemming / locatie</label>
+            <label>Reden / bestemming</label>
             <input id="fReason" type="text">
           </div>
 
@@ -628,14 +492,12 @@ th{
 
   </div>
 
-  <!-- ADMIN -->
-
   <div id="adminView" style="display:none">
 
     <div class="tabs">
 
       <button class="active" onclick="showTab('requests',this)">
-        📋 Reservaties
+        📋 Aanvragen
       </button>
 
       <button onclick="showTab('vehicles',this)">
@@ -644,20 +506,18 @@ th{
 
     </div>
 
-    <!-- REQUESTS -->
-
     <div id="tab-requests">
-      <div id="adminRequests"></div>
-    </div>
 
-    <!-- VEHICLES -->
+      <div id="adminRequests"></div>
+
+    </div>
 
     <div id="tab-vehicles" style="display:none">
 
       <div class="card">
 
         <div class="card-title">
-          🚗 Voertuigen beheren
+          🚗 Voertuig toevoegen
         </div>
 
         <div class="row">
@@ -665,7 +525,7 @@ th{
           <input id="vId" placeholder="ID">
           <input id="vName" placeholder="Naam">
           <input id="vSeats" type="number" value="5">
-          
+
           <select id="vType">
             <option>MPV</option>
             <option>Bus</option>
@@ -675,29 +535,9 @@ th{
 
         </div>
 
-        <button class="btn-primary" onclick="saveVehicle()">
-          💾 Opslaan
+        <button class="btn-primary" onclick="addVehicle()">
+          + Voertuig toevoegen
         </button>
-
-      </div>
-
-      <div class="card" style="margin-top:20px">
-
-        <table>
-
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Naam</th>
-              <th>Zetels</th>
-              <th>Type</th>
-              <th>Acties</th>
-            </tr>
-          </thead>
-
-          <tbody id="vehicleTable"></tbody>
-
-        </table>
 
       </div>
 
@@ -720,12 +560,10 @@ const sb = supabase.createClient(
 const ADMIN_CODE = "2200";
 
 let isAdmin = false;
+
 let vehicles = [];
 let requests = [];
 let selectedVehicle = null;
-let editingVehicle = null;
-
-/* INIT */
 
 (async function(){
 
@@ -736,8 +574,6 @@ let editingVehicle = null;
   setToday();
 
 })();
-
-/* LOAD */
 
 async function loadData(){
 
@@ -757,14 +593,11 @@ async function loadData(){
   requests = rRes.data || [];
 
   renderVehicles();
-  renderVehicleTable();
   renderMyRequests();
   renderAdminRequests();
   renderCalendar();
 
 }
-
-/* REALTIME */
 
 function setupRealtime(){
 
@@ -773,81 +606,37 @@ function setupRealtime(){
   .on(
     'postgres_changes',
     {event:'*',schema:'public',table:'requests'},
-    payload => {
-
+    () => {
       loadData();
-
-      const r = payload.new;
-
-      if(!r) return;
-
-      const myMail =
-        document.getElementById('fEmail').value.trim();
-
-      if(
-        myMail &&
-        r.email === myMail &&
-        r.status !== 'pending'
-      ){
-
-        notify(
-          r.status === 'approved'
-            ? '✅ Uw reservatie werd goedgekeurd'
-            : '❌ Uw reservatie werd geweigerd',
-          r.status === 'approved'
-            ? 'success'
-            : 'error'
-        );
-
-      }
-
     }
+  )
 
-  ).subscribe();
-
-}
-
-/* ADMIN POPUP */
-
-function openAdminModal(){
-  document.getElementById('adminModal').style.display='flex';
-}
-
-function closeAdminModal(){
-  document.getElementById('adminModal').style.display='none';
-}
-
-function checkAdminCode(){
-
-  const code =
-    document.getElementById('adminCodeInput').value;
-
-  if(code !== ADMIN_CODE){
-
-    notify("Foute admin code","error");
-    return;
-
-  }
-
-  isAdmin = true;
-
-  closeAdminModal();
-
-  document.getElementById('btnLogout').style.display='block';
-
-  showView('admin');
+  .subscribe();
 
 }
-
-/* VIEW */
 
 function showView(v){
 
+  if(v === 'admin' && !isAdmin){
+
+    const code = prompt("Admin code");
+
+    if(code !== ADMIN_CODE){
+
+      notify("Foute code","error");
+      return;
+
+    }
+
+    isAdmin = true;
+
+  }
+
   document.getElementById('userView').style.display =
-    v==='user' ? 'block':'none';
+    v === 'user' ? 'block':'none';
 
   document.getElementById('adminView').style.display =
-    v==='admin' ? 'block':'none';
+    v === 'admin' ? 'block':'none';
 
   document.getElementById('btnUser')
     .classList.toggle('active',v==='user');
@@ -856,18 +645,6 @@ function showView(v){
     .classList.toggle('active',v==='admin');
 
 }
-
-function logoutAdmin(){
-
-  isAdmin = false;
-
-  document.getElementById('btnLogout').style.display='none';
-
-  showView('user');
-
-}
-
-/* TABS */
 
 function showTab(tab,btn){
 
@@ -884,15 +661,15 @@ function showTab(tab,btn){
 
 }
 
-/* VEHICLES */
-
 function renderVehicles(){
 
   document.getElementById('vehicleGrid').innerHTML =
     vehicles.map(v=>`
 
-      <button class="v-btn ${selectedVehicle===v.id?'selected':''}"
-      onclick="selectVehicle('${v.id}')">
+      <button
+        class="v-btn ${selectedVehicle===v.id?'selected':''}"
+        onclick="selectVehicle('${v.id}')"
+      >
 
         <div class="v-title">
           🚗 ${v.name}
@@ -915,139 +692,6 @@ function selectVehicle(id){
   renderVehicles();
 
 }
-
-function renderVehicleTable(){
-
-  document.getElementById('vehicleTable').innerHTML =
-    vehicles.map(v=>`
-
-      <tr>
-
-        <td>${v.id}</td>
-        <td>${v.name}</td>
-        <td>${v.seats}</td>
-        <td>${v.type}</td>
-
-        <td>
-
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
-
-            <button class="btn-small btn-edit"
-            onclick="editVehicle('${v.id}')">
-              ✏️
-            </button>
-
-            <button class="btn-small btn-delete"
-            onclick="deleteVehicle('${v.id}')">
-              🗑️
-            </button>
-
-          </div>
-
-        </td>
-
-      </tr>
-
-    `).join('');
-
-}
-
-function editVehicle(id){
-
-  const v = vehicles.find(x=>x.id===id);
-
-  if(!v) return;
-
-  editingVehicle = id;
-
-  document.getElementById('vId').value = v.id;
-  document.getElementById('vName').value = v.name;
-  document.getElementById('vSeats').value = v.seats;
-  document.getElementById('vType').value = v.type;
-
-}
-
-async function saveVehicle(){
-
-  const id =
-    document.getElementById('vId').value.trim();
-
-  const name =
-    document.getElementById('vName').value.trim();
-
-  const seats =
-    +document.getElementById('vSeats').value;
-
-  const type =
-    document.getElementById('vType').value;
-
-  if(!id || !name){
-
-    notify("Vul alles in","error");
-    return;
-
-  }
-
-  if(editingVehicle){
-
-    const {error} =
-      await sb.from('vehicles')
-      .update({name,seats,type})
-      .eq('id',editingVehicle);
-
-    if(error){
-      notify(error.message,"error");
-      return;
-    }
-
-    notify("Voertuig aangepast");
-
-  } else {
-
-    const {error} =
-      await sb.from('vehicles')
-      .insert({id,name,seats,type});
-
-    if(error){
-      notify(error.message,"error");
-      return;
-    }
-
-    notify("Voertuig toegevoegd");
-
-  }
-
-  editingVehicle = null;
-
-  document.getElementById('vId').value='';
-  document.getElementById('vName').value='';
-  document.getElementById('vSeats').value='5';
-
-  loadData();
-
-}
-
-async function deleteVehicle(id){
-
-  if(!confirm("Voertuig verwijderen?")) return;
-
-  const {error} =
-    await sb.from('vehicles')
-    .delete()
-    .eq('id',id);
-
-  if(error){
-    notify(error.message,"error");
-    return;
-  }
-
-  notify("Voertuig verwijderd");
-
-  loadData();
-
-}
-
-/* REQUESTS */
 
 async function submitRequest(){
 
@@ -1087,8 +731,43 @@ async function submitRequest(){
 
   }
 
+  if(start >= end){
+
+    notify("Aankomstuur moet later zijn","error");
+    return;
+
+  }
+
   const vehicle =
     vehicles.find(v=>v.id===selectedVehicle);
+
+  const existing =
+    requests.filter(r =>
+      r.vehicle_id === selectedVehicle &&
+      r.date === date &&
+      r.status !== 'rejected'
+    );
+
+  const clash =
+    existing.find(r =>
+      overlaps(
+        start,
+        end,
+        r.start_time,
+        r.end_time
+      )
+    );
+
+  if(clash){
+
+    notify(
+      `Voertuig reeds gereserveerd tussen ${clash.start_time} en ${clash.end_time}`,
+      "error"
+    );
+
+    return;
+
+  }
 
   const {error} =
     await sb.from('requests').insert({
@@ -1109,6 +788,8 @@ async function submitRequest(){
       persons,
       reason,
 
+      passengers: naam,
+
       status:'pending'
 
     });
@@ -1121,6 +802,8 @@ async function submitRequest(){
   }
 
   notify("Reservatie aangevraagd");
+
+  document.getElementById('fReason').value='';
 
   loadData();
 
@@ -1146,6 +829,15 @@ function renderMyRequests(){
   const mine =
     requests.filter(r=>r.email===email);
 
+  if(!mine.length){
+
+    box.innerHTML =
+      `<p style="color:var(--muted)">Geen aanvragen.</p>`;
+
+    return;
+
+  }
+
   box.innerHTML =
     mine.map(r=>requestCard(r,false)).join('');
 
@@ -1155,6 +847,15 @@ function renderAdminRequests(){
 
   const box =
     document.getElementById('adminRequests');
+
+  if(!requests.length){
+
+    box.innerHTML =
+      `<div class="card">Geen aanvragen.</div>`;
+
+    return;
+
+  }
 
   box.innerHTML =
     requests.map(r=>requestCard(r,true)).join('');
@@ -1169,8 +870,14 @@ function requestCard(r,isAdmin){
   const seats =
     vehicle?.seats || 0;
 
+  const passengerList =
+    (r.passengers || r.naam)
+      .split(',')
+      .map(v=>v.trim())
+      .filter(Boolean);
+
   const free =
-    seats - r.persons;
+    seats - passengerList.length;
 
   return `
 
@@ -1183,7 +890,13 @@ function requestCard(r,isAdmin){
         </div>
 
         <div class="status ${r.status}">
-          ${r.status}
+          ${
+            r.status==='pending'
+              ? '⏳ Wachtend'
+              : r.status==='approved'
+                ? '✅ Goedgekeurd'
+                : '❌ Geweigerd'
+          }
         </div>
 
       </div>
@@ -1196,13 +909,22 @@ function requestCard(r,isAdmin){
         <div>📅 ${r.date}</div>
         <div>🕒 ${r.start_time} → ${r.end_time}</div>
 
-        <div>👥 ${r.persons} personen</div>
-        <div>📍 ${r.reason || '-'}</div>
+        <div>👥 ${passengerList.length} inzittenden</div>
+        <div>📍 ${r.reason}</div>
 
       </div>
 
       <div class="free-spots">
+
         🟢 ${free} vrije plaatsen beschikbaar
+
+        <br><br>
+
+        👥 Meerijders:
+        <br>
+
+        ${passengerList.join('<br>')}
+
       </div>
 
       ${
@@ -1210,24 +932,18 @@ function requestCard(r,isAdmin){
         ? `
           <div class="req-actions">
 
-            <button class="btn-small btn-ok"
-            onclick="decide('${r.id}','approved')">
-              ✅
+            <button
+              class="btn-ok"
+              onclick="decide('${r.id}','approved')"
+            >
+              ✅ Goedkeuren
             </button>
 
-            <button class="btn-small btn-no"
-            onclick="decide('${r.id}','rejected')">
-              ❌
-            </button>
-
-            <button class="btn-small btn-edit"
-            onclick="editRequest('${r.id}')">
-              ✏️
-            </button>
-
-            <button class="btn-small btn-delete"
-            onclick="deleteRequest('${r.id}')">
-              🗑️
+            <button
+              class="btn-no"
+              onclick="decide('${r.id}','rejected')"
+            >
+              ❌ Weigeren
             </button>
 
           </div>
@@ -1241,14 +957,13 @@ function requestCard(r,isAdmin){
 
 }
 
-/* REQUEST ACTIONS */
-
 async function decide(id,status){
 
   const {error} =
-    await sb.from('requests')
-    .update({status})
-    .eq('id',id);
+    await sb
+      .from('requests')
+      .update({status})
+      .eq('id',id);
 
   if(error){
 
@@ -1262,59 +977,6 @@ async function decide(id,status){
   loadData();
 
 }
-
-async function deleteRequest(id){
-
-  if(!confirm("Reservatie verwijderen?")) return;
-
-  const {error} =
-    await sb.from('requests')
-    .delete()
-    .eq('id',id);
-
-  if(error){
-
-    notify(error.message,"error");
-    return;
-
-  }
-
-  notify("Reservatie verwijderd");
-
-  loadData();
-
-}
-
-async function editRequest(id){
-
-  const r = requests.find(x=>x.id===id);
-
-  if(!r) return;
-
-  const reason =
-    prompt("Nieuwe locatie / reden", r.reason);
-
-  if(reason === null) return;
-
-  const {error} =
-    await sb.from('requests')
-    .update({reason})
-    .eq('id',id);
-
-  if(error){
-
-    notify(error.message,"error");
-    return;
-
-  }
-
-  notify("Reservatie aangepast");
-
-  loadData();
-
-}
-
-/* CALENDAR */
 
 function renderCalendar(){
 
@@ -1342,16 +1004,22 @@ function renderCalendar(){
       const seats =
         vehicle?.seats || 0;
 
+      const passengerList =
+        (r.passengers || r.naam)
+          .split(',')
+          .map(v=>v.trim())
+          .filter(Boolean);
+
       const free =
-        seats - r.persons;
+        seats - passengerList.length;
 
       return `
 
-        <div class="req-card approved">
+        <div class="event">
 
-          <div class="req-top">
+          <div class="event-top">
 
-            <div class="req-name">
+            <div class="event-title">
               🚗 ${r.vehicle_name}
             </div>
 
@@ -1361,33 +1029,50 @@ function renderCalendar(){
 
           </div>
 
-          <div class="req-meta">
+          <div class="event-meta">
 
             <div>📅 ${r.date}</div>
-
-            <div>
-              🕒 ${r.start_time || '-'} → ${r.end_time || '-'}
-            </div>
+            <div>🕒 ${r.start_time} → ${r.end_time}</div>
 
             <div>👤 ${r.naam}</div>
+            <div>👥 ${passengerList.length} inzittenden</div>
 
-            <div>
-              👥 ${r.persons} personen
-            </div>
-
-            <div>
-              📍 ${r.reason || '-'}
-            </div>
-
-            <div>
-              📧 ${r.email}
-            </div>
+            <div>📍 ${r.reason}</div>
+            <div>📧 ${r.email}</div>
 
           </div>
 
           <div class="free-spots">
-            🟢 ${free} vrije plaatsen beschikbaar voor carpooling
+
+            🟢 ${free} vrije plaatsen beschikbaar
+
+            <br><br>
+
+            👥 Meerijders:
+            <br>
+
+            ${passengerList.join('<br>')}
+
           </div>
+
+          ${
+            free > 0
+            ? `
+              <button
+                class="btn-primary"
+                style="margin-top:14px"
+                onclick="joinCarpool('${r.id}')"
+              >
+                ➕ Meerijden
+              </button>
+            `
+            : `
+              <div class="status rejected"
+              style="margin-top:14px;text-align:center">
+                Wagen volzet
+              </div>
+            `
+          }
 
         </div>
 
@@ -1397,7 +1082,132 @@ function renderCalendar(){
 
 }
 
-/* HELPERS */
+async function joinCarpool(id){
+
+  const naam =
+    prompt("Uw naam om mee te rijden:");
+
+  if(!naam) return;
+
+  const req =
+    requests.find(r => r.id === id);
+
+  if(!req){
+
+    notify("Reservatie niet gevonden","error");
+    return;
+
+  }
+
+  const vehicle =
+    vehicles.find(v => v.id === req.vehicle_id);
+
+  const seats =
+    vehicle?.seats || 0;
+
+  let passengerList =
+    (req.passengers || '')
+      .split(',')
+      .map(v => v.trim())
+      .filter(Boolean);
+
+  const exists =
+    passengerList.some(
+      p => p.toLowerCase() === naam.toLowerCase()
+    );
+
+  if(exists){
+
+    notify(
+      "U staat al in deze wagen",
+      "error"
+    );
+
+    return;
+
+  }
+
+  if(passengerList.length >= seats){
+
+    notify(
+      "Deze wagen is volzet",
+      "error"
+    );
+
+    return;
+
+  }
+
+  passengerList.push(naam);
+
+  const {error} =
+    await sb
+      .from('requests')
+      .update({
+        passengers: passengerList.join(', ')
+      })
+      .eq('id',id);
+
+  if(error){
+
+    notify(error.message,"error");
+    return;
+
+  }
+
+  notify("Toegevoegd aan carpool");
+
+  loadData();
+
+}
+
+async function addVehicle(){
+
+  const id =
+    document.getElementById('vId').value.trim();
+
+  const name =
+    document.getElementById('vName').value.trim();
+
+  const seats =
+    +document.getElementById('vSeats').value;
+
+  const type =
+    document.getElementById('vType').value;
+
+  if(!id || !name){
+
+    notify("Vul alles in","error");
+    return;
+
+  }
+
+  const {error} =
+    await sb.from('vehicles').insert({
+      id,name,seats,type
+    });
+
+  if(error){
+
+    notify(error.message,"error");
+    return;
+
+  }
+
+  notify("Voertuig toegevoegd");
+
+  loadData();
+
+}
+
+function overlaps(aStart,aEnd,bStart,bEnd){
+
+  return (
+    aStart < bEnd &&
+    bStart < aEnd
+  );
+
+}
 
 function setToday(){
 
@@ -1430,9 +1240,7 @@ function notify(msg,type='success'){
   clearTimeout(notifTimer);
 
   notifTimer = setTimeout(()=>{
-
     el.style.display='none';
-
   },4000);
 
 }
