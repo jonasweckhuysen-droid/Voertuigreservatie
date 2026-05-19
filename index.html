@@ -398,6 +398,15 @@ tr:last-child td{ border-bottom:none; }
     </div>
   </div>
 </div>
+  <div id="installBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:var(--panel);padding:16px;border-top:1px solid var(--border);z-index:1000;">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <span>📱 Installeer deze app voor snellere toegang</span>
+    <div style="display:flex;gap:8px">
+      <button onclick="doInstall()" class="btn-primary" style="margin:0;min-height:40px;padding:8px 16px">Installeren</button>
+      <button onclick="dismissInstall()" style="border:1.5px solid var(--border);border-radius:10px;background:transparent;color:var(--muted);padding:8px 16px;cursor:pointer">Sluiten</button>
+    </div>
+  </div>
+  </div>
 
 <script>
 // ── Supabase ───────────────────────────────────────────────────────────────
