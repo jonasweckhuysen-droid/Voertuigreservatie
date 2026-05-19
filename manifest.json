@@ -1,11 +1,11 @@
 {
   "name": "Brandweer Voertuigreservatie",
-  "short_name": "Voertuigen",
-  "start_url": "./",
+  "short_name": "Voertuigreservatie",
+  "description": "Reserveer brandweer voertuigen",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#171b20",
   "theme_color": "#d42b2b",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "icon 192.png",
